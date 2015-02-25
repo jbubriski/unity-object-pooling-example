@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 	
 	public Transform Bullet;
 	
+	public Vector3 GunOffset;
+	
 	public bool UseObjectPool = false;
 	
 	void Start()
@@ -38,13 +40,13 @@ public class Player : MonoBehaviour
 				
 				if (bullet != null)
 				{
-					bullet.transform.position = transform.position;
+					bullet.transform.position = transform.position + GunOffset;
 				}
 			}
 			else
 			{
 				// New up a bullet everytime
-				Instantiate(Bullet, transform.position, Quaternion.identity);
+				Instantiate(Bullet, transform.position + GunOffset, Quaternion.identity);
 			}
 			
 			FireDelay = FireRate;
