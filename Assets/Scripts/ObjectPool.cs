@@ -16,7 +16,7 @@ public class ObjectPool
     {
     	foreach (var bullet in _pool)
     	{
-			if (!bullet.gameObject.active)
+			if (!bullet.gameObject.activeSelf)
     		{
 				bullet.gameObject.SetActive(true);
 				
