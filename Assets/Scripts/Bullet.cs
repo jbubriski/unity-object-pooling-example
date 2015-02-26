@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 	
 	void Start()
 	{
-		
+		Sphere.Current.Increment();
 	}
 	
 	void Update()
@@ -24,7 +24,14 @@ public class Bullet : MonoBehaviour
 		}
 		else
 		{
-			Destroy(gameObject);
+			Destroy();
 		}
+	}
+	
+	void Destroy()
+	{
+		Destroy(gameObject);
+		
+		Sphere.Current.Decrement();
 	}
 }
